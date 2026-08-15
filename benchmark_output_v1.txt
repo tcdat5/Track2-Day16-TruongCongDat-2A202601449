@@ -1,0 +1,90 @@
+/usr/local/lib/python3.11/dist-packages/lightgbm/sklearn.py:1106: LGBMDeprecationWarning: The argument 'eval_set' is deprecated, use 'eval_X' and 'eval_y' instead.
+  eval_set = _validate_eval_set_Xy(eval_set=eval_set, eval_X=eval_X, eval_y=eval_y)
+
+==============================================================
+  0. MOI TRUONG
+==============================================================
+  timestamp_utc       : 2026-08-15T03:48:39+00:00
+  python_version      : 3.11.2
+  lightgbm_version    : 4.7.0
+  platform            : Linux-6.1.0-52-cloud-amd64-x86_64-with-glibc2.36
+  cpu_count           : 2
+
+==============================================================
+  1. LOAD DATASET
+==============================================================
+  Thoi gian load       : 2.873 s
+  Kich thuoc           : 284,807 dong x 31 cot
+  Gian lan             : 492 dong (0.173%)
+  RAM chiem            : 67.4 MB
+
+==============================================================
+  2. TACH TRAIN / TEST
+==============================================================
+  Train: 227,845 dong (394 gian lan)
+  Test : 56,962 dong (98 gian lan)
+
+==============================================================
+  3. TRAINING
+==============================================================
+  Thoi gian training   : 3.381 s
+  Best iteration       : 1 / 500 cay
+  Toc do               : 0.3 cay/giay
+
+==============================================================
+  4. DANH GIA MO HINH
+==============================================================
+  AUC-ROC              : 0.951654   <-- chi so quan trong nhat
+  Accuracy             : 0.998947
+  F1-Score             : 0.727273
+  Precision            : 0.655738
+  Recall               : 0.816327
+
+  Confusion matrix     : TP=80  FP=42  FN=18  TN=56822
+    -> bat duoc 80/98 gian lan, bo lot 18
+    -> bao dong gia 42 giao dich sach
+
+  [Bay accuracy] Mo hinh 'luon doan khong gian lan' dat: 0.998280
+                 => Accuracy cao KHONG chung minh mo hinh tot.
+
+==============================================================
+  5. INFERENCE LATENCY (1 dong)
+==============================================================
+  So lan do            : 200
+  Median               : 1.726 ms   <-- bao cao con so nay
+  Mean                 : 1.755 ms
+  P95                  : 2.017 ms
+  Min / Max            : 1.593 / 2.712 ms
+
+==============================================================
+  6. INFERENCE THROUGHPUT (1000 dong)
+==============================================================
+  So lan do            : 20
+  Thoi gian / batch    : 2.198 ms cho 1000 dong
+  Throughput           : 454,978 dong/giay   <-- bao cao con so nay
+  Chi phi / dong       : 0.00220 ms
+
+  So sanh: xu ly theo lo nhanh gap ~785x so voi tung dong mot.
+           => Trong production, LUON gom request thanh batch neu co the.
+
+==============================================================
+  7. GHI KET QUA
+==============================================================
+  Da ghi: /home/truongcongdat1401_gmail_com/ml-benchmark/benchmark_result.json
+
+==============================================================
+  BANG TONG KET - LAB 16
+==============================================================
+  Metric                         | Ket qua
+  -------------------------------+---------------------------
+  Thoi gian load data            | 2.873 s
+  Thoi gian training             | 3.381 s
+  Best iteration                 | 1
+  AUC-ROC                        | 0.951654
+  Accuracy                       | 0.998947
+  F1-Score                       | 0.727273
+  Precision                      | 0.655738
+  Recall                         | 0.816327
+  Inference latency (1 row)      | 1.726 ms (median)
+  Inference throughput (1000)    | 454,978 dong/giay
+

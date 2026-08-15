@@ -1,0 +1,56 @@
+{
+  "environment": {
+    "timestamp_utc": "2026-08-15T03:48:39+00:00",
+    "python_version": "3.11.2",
+    "lightgbm_version": "4.7.0",
+    "platform": "Linux-6.1.0-52-cloud-amd64-x86_64-with-glibc2.36",
+    "cpu_count": 2
+  },
+  "data": {
+    "load_time_sec": 2.8731,
+    "rows": 284807,
+    "columns": 31,
+    "fraud_rows": 492,
+    "fraud_rate_percent": 0.1727,
+    "memory_mb": 67.36
+  },
+  "training": {
+    "train_time_sec": 3.3808,
+    "best_iteration": 1,
+    "n_estimators_max": 500,
+    "learning_rate": 0.05,
+    "num_leaves": 31,
+    "trees_per_sec": 0.3
+  },
+  "metrics": {
+    "auc_roc": 0.951654,
+    "accuracy": 0.998947,
+    "f1_score": 0.727273,
+    "precision": 0.655738,
+    "recall": 0.816327,
+    "threshold": 0.5,
+    "confusion_matrix": {
+      "true_negative": 56822,
+      "false_positive": 42,
+      "false_negative": 18,
+      "true_positive": 80
+    },
+    "baseline_accuracy_always_predict_0": 0.99828
+  },
+  "inference_latency_1row": {
+    "runs": 200,
+    "mean_ms": 1.7547,
+    "median_ms": 1.7257,
+    "p95_ms": 2.017,
+    "min_ms": 1.5927,
+    "max_ms": 2.7117
+  },
+  "inference_throughput_1000rows": {
+    "runs": 20,
+    "batch_size": 1000,
+    "mean_batch_time_sec": 0.002198,
+    "mean_batch_time_ms": 2.198,
+    "rows_per_sec": 454977.5,
+    "per_row_ms": 0.002198
+  }
+}
